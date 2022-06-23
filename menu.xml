@@ -1,9 +1,9 @@
 <odoo>
 	<data>
-		<!--action risk register -->
-		<record id="action_ptkp_list" model="ir.actions.act_window">
-			<field name="name">Permintaan Tindakan Koreksi dan Pencegahan</field>
-			<field name="res_model">ptkp.ptkp</field>
+		<!--action ptkp request -->
+		<record id="action_request_list" model="ir.actions.act_window">
+			<field name="name">PTKP</field>
+			<field name="res_model">ptkp.request</field>
 			<field name="view_mode">tree,form</field>
 			<field name="help" type="html">
               <p class="oe_view_nocontent_create">
@@ -13,10 +13,25 @@
 			</field>
 		</record>
 
-		
+
+		<!--action ptkp order -->
+		<record id="action_order_list" model="ir.actions.act_window">
+			<field name="name">PTKP</field>
+			<field name="res_model">ptkp.order</field>
+			<field name="view_mode">tree,form</field>
+			<field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to add a PTKP
+              </p>
+				<p>klik tombol create untuk tambah PTKP baru</p>
+			</field>
+		</record>
+
 
 		
 
+		
+<!-- menu side bar -->
 		<menuitem id="ptkp_0"
 				  name="PTKP"
 				  sequence="20"/>
@@ -26,27 +41,20 @@
 				  parent="ptkp_0"
 				  sequence="20"/>
 
-		<!--
-		<menuitem id="supplier_1"
-				  name="Supplier"
-				  parent="supplier_0"
-				  sequence="20"/>
-		-->
 		
-		<menuitem id="menu_ptkp_ptkp"
-				  name="PTKP"
+		
+		<menuitem id="menu_ptkp_request"
+				  name="PTKP Request"
 				  parent="ptkp_1"
-				  action="action_ptkp_list"
+				  action="action_request_list"
 				  sequence="30"/>
 
-		<!-- menu sidebar dibawahnya
-		<menuitem id="menu_ror_auditinternal"
-				  name="Audit Internal"
-				  parent="ror_1"
-				  action="action_auditinternal_list"
-				  sequence="30"/>
-		-->
-
+		<menuitem id="menu_ptkp_order"
+						  name="PTKP Order"
+						  parent="ptkp_1"
+						  action="action_order_list"
+						  sequence="30"/>
+				
 		
 
 

@@ -1,6 +1,6 @@
 {
 	"name": "Permintaan Tindakan Koreksi dan Pencegahan",
-	"version": "1.0_20220609", 
+	"version": "1.0_202206", 
 	"depends": [
 		"base",
 		"account",
@@ -10,12 +10,15 @@
 	"category": "Manufactur", 
 	'website': 'http://gunacipta.com',
 	"description": """\
-Sistem Permintaan Tindakan Koreksi dan Pencegahan
+PTKP Information System 
 
 """,
 	"data": [
 		"menu.xml",
-		"ptkp.xml",
+		"request.xml",
+		"order.xml",
+		"group.xml",
+		"ir.model.access.csv",
 		"package_bundle_sequence.xml"
 	
 		

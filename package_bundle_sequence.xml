@@ -2,8 +2,8 @@
 	<data>
 		 <record id="seq_ptkp_sequence" model="ir.sequence">
            <field name="name">Package Bundle</field>
-           <field name="code">ptkp.ptkp</field>
-           <field name="prefix">PB</field>
+           <field name="code">ptkp.request</field>
+           <field name="prefix">No.</field>
            <field name="padding">5</field>
            <field name="company_id" eval="False" />
         </record>

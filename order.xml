@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_ptkp_order_tree" model="ir.ui.view">
+            <field name="name">ptkp.order.tree</field>
+            <field name="model">ptkp.order</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="PTKP">
+                   <!-- form pengirim --> 
+                    <field name="reference_od" />
+                    <field name="bukti_od" />
+                    <field name="lokasi_od" />
+                    
+                </tree>
+            </field>
+        </record>
+
+<!-- Search 
+         <record id="view_supplier_suplai_search" model="ir.ui.view">
+            <field name="name">supplier.suplai.search</field>
+            <field name="model">supplier.suplai</field>
+            <field name="arch" type="xml">
+                <search string="Supplier">
+                    <field name="name"/>
+                    <field name="nama_bahan"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                      <filter name="group_perusahaan"
+                              string="Perusahaan"
+                              context="{'group_by': 'name'}"
+                              />
+                       <filter name="group_bahan"
+                              string="bahan"
+                              context="{'group_by': 'nama_bahan'}"
+                              />
+                    </group>
+
+                </search>
+            </field>
+        </record>
+
+-->
+
+
+        <record id="view_ptkp_order_form" model="ir.ui.view">
+            <field name="name">ptkp.order.form</field>
+            <field name="model">ptkp.order</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+            
+                <form string="PTKP">
+					
+
+                    <sheet>
+                        <div class="oe_title">
+                            <h1><field name="reference_od" readonly="1"/></h1>
+                            
+                        </div>
+                        <group>
+                
+                            <field name="bukti_od" />
+                            <field name="lokasi_od" />
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        
+
+    </data>
+</openerp>

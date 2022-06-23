@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_ptkp_request_tree" model="ir.ui.view">
+            <field name="name">ptkp.request.tree</field>
+            <field name="model">ptkp.request</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="PTKP">
+                   <!-- form pengirim --> 
+                    <field name="reference" />
+        <!--            <field name="jenis_ptkp"/>
+                    <field name="sumber" />
+        -->               
+                    <field name="kepada" />
+                    <field name="send_date" />
+                    <field name="uraian" />
+                    <field name="lokasi" />
+        <!--
+                    <field name="bukti"/>
+        
+                    <field name="referensi"/>
+        -->
+
+                <!--form penerima -->
+                    <field name="receipt_date"/>
+        <!--
+                    <field name="tindakan_awal"/>
+                    <field name="akar_penyebab"/>
+                    <field name="tindakan_koreksi"/>
+        -->
+                    <field name="tindakan_pencegahan"/>
+                    <field name="finish_date"/>
+
+                <!-- form verifikasi -->
+       <!--         <field name="komentar"/>
+                    <field name="catatan_tambahan"/>
+        -->
+                    <field name="verifikasi_date"/>
+                    <field name="state"/>
+                    
+                </tree>
+            </field>
+        </record>
+
+<!-- Search 
+         <record id="view_supplier_suplai_search" model="ir.ui.view">
+            <field name="name">supplier.suplai.search</field>
+            <field name="model">supplier.suplai</field>
+            <field name="arch" type="xml">
+                <search string="Supplier">
+                    <field name="name"/>
+                    <field name="nama_bahan"/>
+                    <separator/>
+                    <group expand="0" string="Group By">
+                      <filter name="group_perusahaan"
+                              string="Perusahaan"
+                              context="{'group_by': 'name'}"
+                              />
+                       <filter name="group_bahan"
+                              string="bahan"
+                              context="{'group_by': 'nama_bahan'}"
+                              />
+                    </group>
+
+                </search>
+            </field>
+        </record>
+
+-->
+
+
+        <record id="view_ptkp_request_form" model="ir.ui.view">
+            <field name="name">ptkp.request.form</field>
+            <field name="model">ptkp.request</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+            
+                <form string="PTKP">
+					<header>
+
+                        <!--
+                        <button string="Mark as Close" type="object" name="action_close" />
+                        <button string="Open" type="object" name="action_open" />
+                        
+                        <field name="state" widget="statusbar"/>
+                        -->
+
+                    <button string="Send Request" 
+                        type="object"  
+                        states="draft"
+                        groups="ptkp.group_ptkp_auditor"
+                        name="action_request" />
+
+                    <button string="Accept by Auditan" 
+                        type="object"  
+                        states="request"
+                        groups="ptkp.group_ptkp_auditan"
+                        name="action_confirm" />
+
+                    <button string="Confirm Finish" 
+                        type="object"  
+                        states="confirmed0"
+                        groups="ptkp.group_ptkp_auditan"
+                        name="action_confirm1" />
+
+                    <button string="Confirm by Auditor" 
+                        type="object"  
+                        states="confirmed1"
+                        groups="ptkp.group_ptkp_auditor"
+                        name="action_confirm2" />
+                    <button string="Confirm by FSTL" 
+                        type="object"  
+                        states="confirmed2"
+                        groups="ptkp.group_ptkp_fstl"
+                        name="action_close" />
+
+                    <button string="draft" 
+                        type="object"  
+                        states="request"
+                        groups="ptkp.group_ptkp_manager"
+                        name="action_draft" />
+                    <!---
+                    <button string="Draft" 
+                        type="object"  
+                        states="dipantau"
+                        groups="ptkp.group_ptkp_manager"
+                        name="action_draft" />
+                    -->
+
+                        <field name="state" widget="statusbar"/>
+
+                    </header>
+
+                    <sheet>
+                        <div class="oe_title">
+                            <h1><field name="reference" readonly="1"/></h1>
+                            
+                        </div>
+                        
+                <!--        <group>
+                -->
+                            <group>
+                                <field name="jenis_ptkp" placeholder="Silakan pilih salah satu"/>
+                                <field name="sumber" placeholder="Silakan pilih salah satu"/>
+                                   <!--     <field name="audit_internal" attrs="{'invisible' : [('audit_internal','=','True')]}" />
+                                        <field name="tinjauan_mgn" attrs="{'invisible' : [('tinjauan_mgn','=','True')]}" />
+                                    -->
+                                
+                                
+                                <field name="kepada" />
+                                <field name="send_date" />
+                                <field name="uraian" />
+                                <field name="lokasi" />
+                                <field name="bukti"/>
+                                <field name="referensi"/>
+                                
+                <!--              
+                            </group>
+                            <group>
+                -->
+                 <!--               
+                                <field name="receipt_date"/>
+                                <field name="tindakan_awal"  />
+                                <field name="akar_penyebab" />
+                                <field name="tindakan_koreksi" />
+                                <field name="tindakan_pencegahan" />
+                                <field name="finish_date" />
+                   -->             
+                                
+                                <field name="komentar"/>
+                                <field name="catatan_tambahan"/>
+                                <field name="verifikasi_date"/>
+                                
+
+
+
+                                
+                <!--
+                            </group>
+                -->
+                        </group>
+                
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        
+
+    </data>
+</openerp>

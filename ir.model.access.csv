@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+ptkp_manager,ptkp_manager,model_ptkp_request,group_ptkp_manager,1,1,0,0
+ptkp_fstl,ptkp_fstl,model_ptkp_request,group_ptkp_fstl,1,1,0,0
+ptkp_auditor,ptkp_auditor,model_ptkp_request,group_ptkp_auditor,1,1,1,0
+ptkp_auditan,ptkp_auditan,model_ptkp_request,group_ptkp_auditan,1,1,0,0

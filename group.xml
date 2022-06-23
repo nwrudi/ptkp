@@ -1,0 +1,39 @@
+<odoo>
+	<data>
+		<record id="group_ptkp_manager" model="res.groups">
+			<field name="name">ptkp manager</field>
+
+		</record>
+
+		<record id="group_ptkp_fstl" model="res.groups">
+			<field name="name">ptkp fstl</field>
+
+		</record>
+
+		<record id="group_ptkp_auditor" model="res.groups">
+			<field name="name">ptkp auditor</field>
+
+		</record>
+
+		<record id="group_ptkp_auditan" model="res.groups">
+			<field name="name">ptkp auditan</field>
+
+		</record>
+
+<!--
+		<record id="ror_editable_responsible" model="ir.rule">
+
+			<field name="name">hanya bisa diedit oleh responsible</field>
+			<field name="model_id" ref="model_ror_riskregister"/>
+			<field name="groups" eval="[(4, ref('group_ror_user'))]"/>
+			<field name="domain_force">[('user_id','=',user.id)] </field>
+			<field name="perm_read" eval="0" />
+			<field name="perm_write" eval="0" />
+			<field name="perm_create" eval="0" />
+			<field name="perm_unlink" eval="1" />
+
+		</record>
+-->			
+
+	</data>
+</odoo>
